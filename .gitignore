@@ -33,6 +33,12 @@ models/*
 *.pth
 *.h5
 
+# These three SMALL artifacts ARE committed — they're the deployed model.
+# Random Forest is NOT committed (too big for git — > 100 MB).
+!models/xgboost.joblib
+!models/scaler.joblib
+!models/preprocess.joblib
+
 # ----------------------------------------------------------------------------
 # Plots (generated)
 # ----------------------------------------------------------------------------
