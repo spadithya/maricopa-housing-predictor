@@ -1,0 +1,142 @@
+# ============================================================================
+# Maricopa County Housing — .gitignore
+# ============================================================================
+# Strategy: track code, scripts, schema docs, and folder structure.
+# Never track raw data, processed parquet/CSV, trained models, or env files.
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Data
+# ----------------------------------------------------------------------------
+# Ignore everything under data/, keep only .gitkeep placeholders and the
+# small schema files (Legend.xlsx, FileSpec doc) so future-you / collaborators
+# know what columns the raw file should have.
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/raw/Legend.xlsx
+!data/raw/Residential_Master/
+data/raw/Residential_Master/*
+!data/raw/Residential_Master/FileSpec/
+
+# ----------------------------------------------------------------------------
+# Trained models / artifacts
+# ----------------------------------------------------------------------------
+models/*
+!models/.gitkeep
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.pt
+*.pth
+*.h5
+
+# ----------------------------------------------------------------------------
+# Plots (generated)
+# ----------------------------------------------------------------------------
+# Commit plots is optional. Default = don't, but keep the folder around.
+**/plots/*
+!**/plots/.gitkeep
+
+# ----------------------------------------------------------------------------
+# Python
+# ----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Type-check / lint caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.pytype/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ----------------------------------------------------------------------------
+# Virtual environments
+# ----------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+
+# ----------------------------------------------------------------------------
+# Jupyter
+# ----------------------------------------------------------------------------
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# ----------------------------------------------------------------------------
+# IDE / editor
+# ----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.spyderproject
+.spyproject
+
+# ----------------------------------------------------------------------------
+# OS
+# ----------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Word/Excel lock files (you have one in FileSpec already)
+~$*
+
+# ----------------------------------------------------------------------------
+# Secrets / config
+# ----------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.yml
+config.local.*
+
+# ----------------------------------------------------------------------------
+# Streamlit / app runtime
+# ----------------------------------------------------------------------------
+.streamlit/secrets.toml
+
+# ----------------------------------------------------------------------------
+# Logs
+# ----------------------------------------------------------------------------
+*.log
+logs/

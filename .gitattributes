@@ -1,0 +1,37 @@
+# Normalize line endings on commit; check out with platform-appropriate endings.
+# Important for cross-platform projects — keeps Windows CRLF out of the repo.
+
+* text=auto eol=lf
+
+# Explicit text files
+*.py     text eol=lf
+*.md     text eol=lf
+*.txt    text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.json   text eol=lf
+*.cfg    text eol=lf
+*.toml   text eol=lf
+*.ini    text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Binary files — never touch
+*.xlsx   binary
+*.xls    binary
+*.docx   binary
+*.doc    binary
+*.pdf    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.parquet binary
+*.pkl    binary
+*.pickle binary
+*.joblib binary
+*.h5     binary
+*.onnx   binary
+
+# Jupyter notebooks — treat as text for diff visibility, but expect huge diffs.
+*.ipynb  text eol=lf
