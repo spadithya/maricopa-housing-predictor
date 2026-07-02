@@ -9,7 +9,8 @@ Assessor data.
 
 ## Live demo
 
-`predictor.yourdomain.com` (once deployed — see "Deployment" below).
+`https://spadida-maricopa-housing-stats.streamlit.app/` 
+`https://spadida-maricopa-housing-predictor.streamlit.app/`
 
 Locally:
 ```bash
@@ -74,25 +75,6 @@ maricopa-housing-predictor/
 | Ridge α=1.0            | 0.1921  | 0.705  | $111,232  | 20.14% |
 | **Random Forest**      | **0.1226** | **0.846** | **$73,771** | **13.14%** |
 | XGBoost                | 0.1330  | 0.833  | $79,649   | 13.89% |
-
-## Deployment
-
-### Streamlit Community Cloud
-
-The cleanest path to put the app online:
-
-1. Push this repo to GitHub.
-2. Sign in at `share.streamlit.io` with your GitHub account.
-3. Point Streamlit Cloud at this repo, `app.py` as the entry point.
-4. Add a `CNAME` record on your DNS pointing
-   `predictor.yourdomain.com → <your-app-name>.streamlit.app`.
-
-> **Note on model size.** The Random Forest `.joblib` is large
-> (~100-500 MB) and won't fit in git's 100 MB file limit. Options:
-> - Switch to XGBoost as the deployed model (smaller, slightly less accurate)
-> - Retrain RF with fewer trees + a depth cap
-> - Use Git LFS
-> - Host the model artifact on Hugging Face Hub / S3 and download on app start
 
 ## Notes on the data
 
